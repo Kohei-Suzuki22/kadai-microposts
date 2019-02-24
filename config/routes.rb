@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   delete "logout", to: "sessions#destroy"
   
   
+  resources :microposts, only: [:create, :destroy]
+  
   
   get "signup", to: "users#new"
   resources :users, only: [:index,:show,:new,:create]
