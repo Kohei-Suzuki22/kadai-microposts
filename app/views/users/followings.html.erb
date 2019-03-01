@@ -24,6 +24,12 @@
         <% end %>
       </li>
       
+      <li class="<%= 'active' if current_page?(likes_user_path(@user)) %>">
+        <%= link_to likes_user_path(@user) do %>
+          Favorites <span class="badge"><%= @count_favorites %></span>
+        <% end %>
+      </li>
+      
       <li class="<%= 'active' if current_page?(followings_user_path(@user)) %> ">
         <%= link_to followings_user_path(@user) do %>
           Followins <span class="badge"><%= @count_followings %></span>
